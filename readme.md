@@ -9,7 +9,7 @@
 #### Figure 2: Average words per sentence in each excerpt.
 <br>
 
-<img src="images/logos/spark.png" width="120">
+<img src="images/logos/spark.png" width="150">
 <img src="images/logos/project_gutenberg.png" width="120">
 <img src="images/logos/python.png" width="120">
 <img src="images/logos/linux.png" width="120">
