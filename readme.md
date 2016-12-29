@@ -6,7 +6,7 @@
 #### Figure 1: All four authors average around 4.5 letters per word (after removal of stopwords) with John Muir coming in slightly above the others.
 <br>
 <img src="images/sent_len.png" width="800">
-#### Figure 2: Charles Dickens, Mark Twain, and Jane Austen average between 20-25 words per sentence with John Muir averaging around 28 words per sentence. Stop words have been removed from all works.
+#### Figure 2: Charles Dickens, Mark Twain, and Jane Austen average between 20-25 words per sentence with John Muir averaging around 28 words per sentence. Interestingly, the distribution for John Muir is also more symmetrical. Stop words have been removed from all works.
 <br>
 
 <img src="images/logos/spark.png" width="150">
