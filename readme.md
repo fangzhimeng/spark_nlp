@@ -1,6 +1,6 @@
 # A NLP and Data Visualization Work in Progress Using Spark
 
-##### This project is a collaboration with <a href="https://github.com/coradek">Evan Atkins</a> and <a href="https://github.com/SydneyLauren">Sydney Decoto</a>. Five works each by Jane Austen, Charles Dickens, Mark Twain, and John Muir were selected for comparison. More work will be added as the project progresses.
+##### This project is a collaboration with <a href="https://github.com/coradek">Evan Adkins</a> and <a href="https://github.com/SydneyLauren">Sydney Decoto</a>. Five works each by Jane Austen, Charles Dickens, Mark Twain, and John Muir were selected for comparison. More work will be added as the project progresses.
 
 <img src="images/austen_cloud.png" height="600">
 #### Figure 1: Wordcloud for works by Jane Austen.
