@@ -6,15 +6,15 @@
 #### Figure 1: Wordcloud for works by Jane Austen.
 <br>
 
-<img src="images/word_len.png" height="600">
+<img src="images/muir_cloud.png" height="600">
 #### Figure 2: Wordcloud for works by John Muir.
 <br>
 
-<img src="images/word_len.png" height="600">
+<img src="images/dickens_cloud.png" height="600">
 #### Figure 3: Wordcloud for works by Charles Dickens.
 <br>
 
-<img src="images/word_len.png" height="600">
+<img src="images/twain_cloud.png" height="600">
 #### Figure 4: Wordcloud for works by Mark Twain.
 <br>
 
