@@ -2,19 +2,19 @@
 
 ##### This project is a collaboration with <a href="https://github.com/coradek">Evan Adkins</a> and <a href="https://github.com/SydneyLauren">Sydney Decoto</a>. Five works each by Jane Austen, Charles Dickens, Mark Twain, and John Muir were selected for comparison. More work will be added as the project progresses.
 
-<img src="images/austen_cloud.png" height="600">
+<img src="images/austen_cloud.png" height="800">
 #### Figure 1: Wordcloud for works by Jane Austen.
 <br>
 
-<img src="images/muir_cloud.png" height="600">
+<img src="images/muir_cloud.png" height="800">
 #### Figure 2: Wordcloud for works by John Muir.
 <br>
 
-<img src="images/dickens_cloud.png" height="600">
+<img src="images/dickens_cloud.png" height="800">
 #### Figure 3: Wordcloud for works by Charles Dickens.
 <br>
 
-<img src="images/twain_cloud.png" height="600">
+<img src="images/twain_cloud.png" height="800">
 #### Figure 4: Wordcloud for works by Mark Twain.
 <br>
 
