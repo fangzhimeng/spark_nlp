@@ -1,39 +1,43 @@
+
 from spacy.en import English
 from pyspark import keyword_only
-from pyspark.ml.util import Identifiable
+from pyspark.ml import Transformer
+from pyspark.ml.param.shared import HasInputCol, HasOutputCol, Param
 from pyspark.sql.functions import udf
-from spark.ml.pipeline import Transformer
-from spark.ml.param.shared import HasInputCol, HasOutputCol
 from pyspark.sql.types import ArrayType, StringType
 
 
-class ParsingTransformer(Transformer, HasInputCol, HasOutputCol):
+class SpacyTokenizer(Transformer, HasInputCol, HasOutputCol):
 
     @keyword_only
-    def __init__(self, inputCol=None, oututCol=None):
-        super(ParsingTransformer, self).__init__()
+    def __init__(self, inputCol=None, outputCol=None, stopwords=None):
+        super(SpacyTokenizer, self).__init__()
+        self.stopwords = Param(self, "stopwords", "")
+        self._setDefault(stopwords=set())
         kwargs = self.__init__._input_kwargs
         self.setParams(**kwargs)
 
     @keyword_only
-    def setParams(self, inputCol=None, outputCol=None):
+    def setParams(self, inputCol=None, outputCol=None, stopwords=None):
         kwargs = self.setParams._input_kwargs
         return self._set(**kwargs)
 
+    def setStopwords(self, value):
+        self._paramMap[self.stopwords] = value
+        return self
+
+    def getStopwords(self):
+        return self.getOrDefault(self.stopwords)
+
     def _transform(self, dataset):
-        parser = English()
+        stopwords = self.getStopwords()
 
-        # def f(s):
-        #     tokens = parser(s)
-        #     return [tok.lower_ for tok in tokens]
-        #
-        # t = ArrayType(StringType())
-        # out_col = self.getOutputCol()
-        # in_col = self.dataset[self.getInputCol()]
-        # return dataset.withColumn(out_col, udf(f, t)(in_col))
+        def f(s):
+            parser = English()
+            tokens = [str(tok) for tok in parser(s)]
+            return [t for t in tokens if t.lower() not in stopwords]
 
-        parser = udf(lambda excerpt: [t.lower_ for t in parser(excerpt)],
-                     ArrayType(StringType()))
-        inCol = self.getInputCol()
-        outCol = self.getOutputCol()
-        return dataset.withColumn(outCol, parser(inCol))
+        t = ArrayType(StringType())
+        out_col = self.getOutputCol()
+        in_col = dataset[self.getInputCol()]
+        return dataset.withColumn(out_col, udf(f, t)(in_col))
