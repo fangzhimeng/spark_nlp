@@ -7,11 +7,11 @@ from pyspark.sql.functions import udf
 from pyspark.sql.types import ArrayType, StringType
 
 
-class SpacyTokenizer(Transformer, HasInputCol, HasOutputCol):
+class SpacyTransformer(Transformer, HasInputCol, HasOutputCol):
 
     @keyword_only
     def __init__(self, inputCol=None, outputCol=None, stopwords=None):
-        super(SpacyTokenizer, self).__init__()
+        super(SpacyTransformer, self).__init__()
         self.stopwords = Param(self, "stopwords", "")
         self._setDefault(stopwords=set())
         kwargs = self.__init__._input_kwargs
